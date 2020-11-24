@@ -1,0 +1,341 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="js1/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="a-frame-href.js"></script>
+
+  </head>
+  <body>
+    <a-scene
+    cursor="rayOrigin: mouse"
+    do-something particle-system="preset: dust; particleCount: 1000">
+
+<a-assets>
+    <a-asset-item id="clover-obj" src="models/clover.obj"></a-asset-item>
+    <a-asset-item id="clover-mtl" src="models/clover.mtl"></a-asset-item>
+    <a-asset-item id="bush_large-obj" src="MO2/bush_large.obj"></a-asset-item>
+    <a-asset-item id="bush_large-mtl" src="MO2/bush_large.mtl"></a-asset-item>
+    <a-asset-item id="bush_small-obj" src="MO2/bush_small.obj"></a-asset-item>
+    <a-asset-item id="bush_small-mtl" src="MO2/bush_small.mtl"></a-asset-item>
+    <a-asset-item id="flower_large-obj" src="MO2/flower_large.obj"></a-asset-item>
+    <a-asset-item id="flower_large-mtl" src="MO2/flower_large.mtl"></a-asset-item>
+    <a-asset-item id="flower_small-obj" src="MO2/flower_small.obj"></a-asset-item>
+    <a-asset-item id="flower_small-mtl" src="MO2/flower_small.mtl"></a-asset-item>
+    <a-asset-item id="grass_1-obj" src="MO2/grass_1.obj"></a-asset-item>
+    <a-asset-item id="grass_1-mtl" src="MO2/grass_1.mtl"></a-asset-item>
+    <a-asset-item id="grass_2-obj" src="MO2/grass_2.obj"></a-asset-item>
+    <a-asset-item id="grass_2-mtl" src="MO2/grass_2.mtl"></a-asset-item>
+    <a-asset-item id="grass_3-obj" src="MO2/grass_3.obj"></a-asset-item>
+    <a-asset-item id="grass_3-mtl" src="MO2/grass_3.mtl"></a-asset-item>
+    <a-asset-item id="tree_large-obj" src="MO2/tree_large.obj"></a-asset-item>
+    <a-asset-item id="tree_large-mtl" src="MO2/tree_large.mtl"></a-asset-item>
+    <a-asset-item id="tree_small-obj" src="MO2/tree_small.obj"></a-asset-item>
+    <a-asset-item id="tree_small-mtl" src="MO2/tree_small.mtl"></a-asset-item>
+    <a-asset-item id="tree_medium-obj" src="MO2/tree_medium.obj"></a-asset-item>
+    <a-asset-item id="tree_medium-mtl" src="MO2/tree_medium.mtl"></a-asset-item>
+    <a-asset-item id="Jellyfish-obj" src="models/Jellyfish.obj"></a-asset-item>
+    <a-asset-item id="Jellyfish-mtl" src="models/Jellyfish.mtl"></a-asset-item>
+    <a-asset-item id="clam-obj" src="models/clam.obj"></a-asset-item>
+    <a-asset-item id="clam-mtl" src="models/clam.mtl"></a-asset-item>
+    <img id="ww" src="ww.jpg">
+    <img id="GG" src="GG.jpg">
+    <img id="ff" src="ff.jpg">
+    <img id="zzz" src="zzz.jpg">
+    <img id="tt3" src="tt3.jpg">
+    <img id="z" src="z.jpg">
+    <img id="dd1" src="dd1.jpg">
+    <img id="Jelly" src="Jellyfish.png">
+    <img id="ss" src="ss.jpg">
+    <img id="z1zz" src="z1zz.jpg">
+    <img id="cc" src="cc.jpg">
+    <audio id="wh" src="wh.mp3"></audio>
+
+
+
+  </a-assets>
+
+    <a-entity
+    position="0 2 0">
+    <a-entity
+    camera look-controls wasd-controls>
+    <a-entity position="0 0 -3"
+              geometry="primitive: ring; radiusInner: 0.2; radiusOuter: 0.3;"
+              material="color: white; shader: flat"
+              cursor="fuse: true">
+            <a-animation begin="fusing" easing="ease-in" attribute="scale"
+              fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500">
+            </a-animation>
+            <a-animation begin="click" easing="ease-in" attribute="scale" dur="1500"
+                fill="forwards" from="0.1 0.1 0.1" to="1 1 1">
+            </a-animation>
+
+            <a-entity id="datos" visible="false" position="0 3.5 -4" geometry="primitive: plane; height: 5; width: 5" material="side: double">
+              <a-text font="monoid" id="planeta_text" position="-1 2 0" width="14" value ="Planeta" color="#000"></a-text>
+              <a-text font="dejavu" id="masa_text" position="-2 1 0" width="7" value ="Datos interesantes" color="#000"></a-text>
+              <a-text font="dejavu" id="volumen_text" position="-2 0 0" width="7" value ="Datos interesantes" color="#000"></a-text>
+              <a-text font="dejavu" id="gravedad_text" position="-2 -1 0" width="7" value ="Datos interesantes" color="#000"></a-text>
+            </a-entity>
+
+          </a-entity>
+        </a-entity>
+    </a-entity>
+
+    <a-sphere
+    id="sol"
+    position="-1.37245 5.50332 -7"
+    radius="3.5"
+    material="src:#ss"
+    sound="src: #wh; autoplay: true; loop: true"
+    href="strange.html">
+    <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+  repeat="indefinite"></a-animation>
+    </a-sphere>
+
+      <a-sphere id="mercurio" position="6 2 -4" radius="0.5" src="z1zz.jpg">
+        <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+      repeat="indefinite"></a-animation>
+      </a-sphere>
+
+      <a-sphere id="venus" position="6 2 0" radius="0.75" src="cc.jpg">
+        <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+      repeat="indefinite"></a-animation>
+      </a-sphere>
+
+      <a-sphere id="tierra" position="-6.85413 8.23728 5" radius="1" material="src:#dd1">
+        <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+      repeat="indefinite"></a-animation>
+      </a-sphere>
+
+      <a-sphere id="marte" position="-8 2 7" radius="0.5" material="src:#z1zz">
+        <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+      repeat="indefinite"></a-animation>
+      </a-sphere>
+
+
+      <a-sphere id="jupiter" position="-16 2 2" radius="1.5" src="ss.jpg">
+        <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+      repeat="indefinite"></a-animation>
+      </a-sphere>
+
+      <a-sphere id="saturno" position="-21 2 -6" radius="1.25" src="tt3.jpg">
+        <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+      repeat="indefinite"></a-animation>
+      </a-sphere>
+      <a-entity position="-16 2 2" geometry="primitive: circle; radius: 2.5" material="side: double" color="#F0EABA"></a-entity>
+
+      <a-sphere id="urano" position="-26 2 -15" radius="1" src="dd1.jpg"
+      >
+        <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+      repeat="indefinite"></a-animation>
+      </a-sphere>
+
+      <a-sphere id="neptuno" position="-1 2 -26" radius="1" src="ww.jpg">
+        <a-animation attribute="rotation" from="0 45 45" to="0 360 0" direction="alternate" dur="30000"
+      repeat="indefinite"></a-animation>
+      </a-sphere>
+
+      <a-box
+      height="100"
+      depth="0"
+      width="3"
+      position="-7.26876 -0.46 0"
+      rotation="-90 0 0"
+      color="darkgrey"
+
+      scale="1 0.03 1"
+      material="src:#zzz"
+      >
+    </a-box>
+
+    <a-entity
+    obj-model="obj:models/clover.obj"
+    position="5.85153 -0.68733 3.19064"
+    scale="0.72 -0.26 0.72"
+    rotation="-168.17 -90 0"
+    material="src:#ff">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:models/clover.obj"
+      position="1.03783 0.50467 5.56051"
+      scale="0.59 -0.24 0.61"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#ff">
+        </a-entity>
+
+      <a-entity
+      obj-model="obj:models/clover.obj"
+      position="0.33746 -0.78873 -0.43739"
+      scale="0.92 -0.26 0.73" rotation="-167.64000000000004 -90 0"
+      material="src:#ff">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:models/clover.obj"
+      position="-4.24133 0.927 4.15006"
+      scale="0.92 -0.15 0.66"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#ff">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/bush_large.obj"
+      position="8.093 5.903 -20.433"
+      scale="0.92 1.610 1.320"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#zzz">
+      </a-entity>
+
+
+
+      <a-entity
+      obj-model="obj:MO2/bush_small.obj"
+      position="-15.334 5.845 7.139"
+      scale="0.930 2.130 2.490"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#zzz">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/flower_large.obj"
+      position="7.606 6.438 4.150"
+      scale="0.920 1.310 0.660"
+      rotation="-167.640 -90 0"
+      material="src:#zzz">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/flower_small.obj"
+      position="-11.101 -1.107 -3.059"
+      scale="1.250 -2.750 0.66"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#zzz">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_1.obj"
+      position="-2.242 2.533 8.266"
+      scale="0.920 -0.15 0.66"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#tt3">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_1.obj"
+      position="-18.516 8.398 8.266"
+      scale="0.920 1.070 2.540"
+      rotation="-158.760 -88.180 -1.810"
+      material="src:#tt3">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_1.obj"
+      position="-2.242 -1.557 18.328"
+      scale="-2.670 -1.360 4.860"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#tt3">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_1.obj"
+      position="16.599 5.497 0.867"
+      scale="2.480 0.830 2.900"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#tt3">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_2.obj"
+      position="-6.121 -10.066 -7.730"
+      scale="10.000 -10.000 10.000"
+      rotation="-167.640 -90 0"
+      material="src:#tt3">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_2.obj"
+      position="-6.769 -8.521 4.150"
+      scale="10.700 -11.780 22.210"
+      rotation="-167.640 -90 0"
+      material="src:#tt3">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_2.obj"
+      position="6.839 -5.927 5.558"
+      scale="12.830 -6.990 13.780"
+      rotation="-167.640 -90 0"
+      material="src:#tt3">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_2.obj"
+      position="6.121 -16.771 -4.150"
+      scale="2.340 -14.350 12.610"
+      rotation="-167.640 -90 0"
+      material="src:#tt3">
+
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/grass_3.obj"
+      position="4.241 4.143 4.150"
+      scale="0.730 -0.530 1.770"
+      rotation="-167.640 -90 0"
+      material="src:#tt3">
+      </a-entity>
+
+
+
+      <a-entity
+      obj-model="obj:MO2/tree_large.obj"
+      position="-8.375 0.398 4.150"
+      scale="0.920 -0.15 0.66"
+      rotation="-167.640 -90 0"
+      material="src:#z">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/tree_small.obj"
+      position="4.24133 0.927 -4.15006"
+      scale="0.92 -0.15 0.66"
+      rotation="-167.64000000000004 -90 0"
+      material="src:#z">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:MO2/tree_medium.obj"
+      position="-4.824 0.254 8.792"
+      scale="0.920 -0.220 0.660"
+      rotation="-167.640 -90 0"
+      material="src:#z">
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:models/Jellyfish.obj"
+      position="-0.947 3.490 4.394"
+      scale="0.610 -0.620 0.520"
+      rotation="-167.640 -90 0"
+      material="src:#Jelly">
+
+      </a-entity>
+
+      <a-entity
+      obj-model="obj:models/clam.obj"
+      position="2.885 3.490 -0.820"
+      scale="0.610 -0.480 0.520"
+      rotation="-167.640 0.000 -20"
+      material="src:#cc">
+
+      </a-entity>
+
+
+
+
+
+      <a-sky src="#ww"></a-sky>
+    </a-scene>
+    <script type="text/javascript" src="js1/app.js"></script>
+  </body>
+</html>
